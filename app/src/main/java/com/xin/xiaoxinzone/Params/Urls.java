@@ -14,6 +14,7 @@ public class Urls {
     public static final String headNewsUrl = "/toutiao/index";//头条数据URL
 
     public static final String textJokeUrl = "/joke/content/list.php";//文本笑话数据URL
+    public static final String searchUrl = "/dream/query";
 
     public static final String imgJokeUrl = "/joke/img/list.from";//头条数据URL
 
