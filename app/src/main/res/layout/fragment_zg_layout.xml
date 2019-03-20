@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/search_conners"
+
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <Button
+            android:id="@+id/search_btn"
+            android:layout_width="80dp"
+            android:background="@drawable/search_btn_conners"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_height="match_parent" />
+        <EditText
+            android:id="@+id/search_edt"
+            android:background="@null"
+            android:layout_marginLeft="10dp"
+            android:hint="搜索梦，如：蛇"
+            android:textSize="14sp"
+            android:layout_toLeftOf="@id/search_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    <GridView
+        android:id="@+id/jiemeng_grid"
+        android:numColumns="5"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></GridView>
+</LinearLayout>
