@@ -3,16 +3,13 @@ package com.xin.xiaoxinzone.Base;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
-import android.view.WindowManager;
 
-import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
-import com.gyf.barlibrary.OnKeyboardListener;
 import com.vondear.rxtools.RxBarTool;
 import com.vondear.rxtools.view.RxTitle;
 import com.vondear.rxtools.view.dialog.RxDialogLoading;
 import com.xin.xiaoxinzone.R;
-import com.xin.xiaoxinzone.Utils.ResourceTools;
+import com.xin.xiaoxinzone.Utils.StatusBarUtil;
 
 import butterknife.ButterKnife;
 
@@ -56,16 +53,25 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements V
 
         //设置沉浸式状态栏
         initImmersionBar();
-
+        setStatusBar();
         rxDialogLoading = new RxDialogLoading(this);
-        rxDialogLoading.setLoadingText("小xin正在疯狂加载中...");
+        rxDialogLoading.setLoadingText("正在疯狂加载中...");
+        initView();
 
         initData();
-        initView();
         initListener();
 
     }
-
+    /**
+     * 设置light model
+     * 状态栏
+     */
+    public void setStatusBar() {
+//        int color = getResources().getColor(R.color.elita_color_white);
+//        StatusBarUtil.setColor(mElitaBaseActivity, color, 0);
+        StatusBarUtil.setTranslucent(this,50);
+//        StatusBarUtil.setLightMode(mElitaBaseActivity);
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -94,7 +100,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements V
             //图片沉浸式状态栏不做任何设置
             mImmersionBar.init();
         } else if (style == TEXT_STATUS_BAR) {
-            mImmersionBar.statusBarView(R.id.top_view)
+            mImmersionBar
                     .statusBarColor(R.color.color_1c84d1)
                     .init();
         }

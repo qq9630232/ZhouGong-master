@@ -15,4 +15,28 @@
     <color name="color_3e000000">#3e000000</color>
     <color name="color_f1f3f4">#f1f3f4</color>
     <color name="color_f5ec5a">#f5ec5a</color>
+
+    <color name="head_bg">#F7B7B7</color>
+    <color name="bg">#FFF</color>
+
+    <!--圆形百分比图-->
+    <color name="blue">#68C8EE</color>
+    <color name="green">#A7DB6B</color>
+    <color name="yellow">#ECE02D</color>
+    <color name="orange">#FFC877</color>
+    <color name="red">#F7B7B7</color>
+    <color name="grey">#FFF4F4</color>
+
+    <color name="chart_text_color">#393939</color>
+    <color name="lucky_text_color">#716F6F</color>
+    <color name="today_about">#F45A5A</color>
+    <color name="today_content">#737272</color>
+
+    <!--左划菜单-->
+    <color name="left_bg">#E89193</color>
+    <color name="left_item_bg">#F1BDBE</color>
+    <color name="left_item_text_color">#FFFFFF</color>
+
+    <color name="item_text_color">#575757</color>
+    <color name="item_content_color">#3E3E3E</color>
 </resources>

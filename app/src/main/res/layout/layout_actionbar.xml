@@ -13,9 +13,10 @@
     <com.vondear.rxtools.view.RxTitle
         android:id="@+id/rx_title"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
+
         android:background="@color/color_1c84d1"
-        app:leftIconVisibility="false"
+        app:leftIconVisibility="true"
         app:title="小xin空间"
         />
 </LinearLayout>

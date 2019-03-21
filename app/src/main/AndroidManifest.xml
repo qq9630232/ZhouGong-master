@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.xin.xiaoxinzone">
+    package="com.xin.xiaoxinzone">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".Base.DemoApplication"
@@ -13,20 +13,21 @@
         <activity
             android:name=".UI.Others.WelcomeActivity"
             android:theme="@style/AppTheme.Translucent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+        </activity>
+        <activity android:name=".UI.Others.SlideActivity" />
+        <activity android:name=".UI.Main.Main.Activity.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.Others.SlideActivity">
-        </activity>
-        <activity android:name=".UI.Main.Main.Activity.MainActivity">
-        </activity>
-        <activity android:name=".UI.Main.HeadNews.Activity.HeadNewsWebActivity"/>
-        <activity android:name=".UI.Main.Me.Constellation.Activity.ConstellationActivity">
-        </activity>
-        <activity android:name=".UI.Main.Me.Calender.CalenderActivity"/>
+        <activity android:name=".UI.Main.HeadNews.Activity.HeadNewsWebActivity" />
+        <activity android:name=".UI.Main.Me.Constellation.Activity.ConstellationActivity" />
+        <activity android:name=".UI.Main.Me.Calender.CalenderActivity" />
+        <activity android:name=".UI.Main.ZhouGong.fragment.activity.DreamListActivity" />
+        <activity android:name=".UI.Main.ZhouGong.fragment.activity.DreamDetailsActivity"></activity>
     </application>
 
 </manifest>

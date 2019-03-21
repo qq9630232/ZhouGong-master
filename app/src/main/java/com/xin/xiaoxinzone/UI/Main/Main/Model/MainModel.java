@@ -1,6 +1,9 @@
 package com.xin.xiaoxinzone.UI.Main.Main.Model;
 
 import android.content.Context;
+import android.graphics.ColorMatrixColorFilter;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -46,11 +49,23 @@ public class MainModel {
 
     }
 
+
+    //设置图标的颜色
+    private void setIconColor(ImageView icon, int r, int g, int b, int a) {
+        float[] colorMatrix = new float[]{
+                0, 0, 0, 0, r,
+                0, 0, 0, 0, g,
+                0, 0, 0, 0, b,
+                0, 0, 0, (float) a / 255, 0
+        };
+        icon.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+    }
     /**
      * @param tvList
      * @param imgList
      * @param showTag
      */
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void setShowFragmentTextStyle(Context context, List<TextView> tvList, List<ImageView> imgList, int showTag) {
 
         if (tvList.size() != imgList.size()) {
@@ -68,24 +83,55 @@ public class MainModel {
 
         }
 
+
         //设置选择的button背景图片
-        if (showTag == MainActivity.home_head_news_tag) {
+        if (showTag == MainActivity.home_dream_tag) {
+            //解梦选中
+            ImageView mDreamView = imgList.get(MainActivity.home_dream_tag);
+            setIconColor(mDreamView,28,132,209,255);
+
+            ImageView mConView = imgList.get(MainActivity.home_constellation_tag);
+            setIconColor(mConView,32,33,34,255);
+            imgList.get(MainActivity.home_head_news_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_head_news));
+//            imgList.get(MainActivity.home_me_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_me));
+
+
+        } else if (showTag == MainActivity.home_constellation_tag) {
+            //星座选中
+            imgList.get(MainActivity.home_head_news_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_head_news));
+//            imgList.get(MainActivity.home_me_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_me));
+            ImageView mDreamView = imgList.get(MainActivity.home_dream_tag);
+            setIconColor(mDreamView,32,33,34,255);
+
+            ImageView mConView = imgList.get(MainActivity.home_constellation_tag);
+            setIconColor(mConView,28,132,209,255);
+
+
+        } else if (showTag == MainActivity.home_head_news_tag) {
             //头条选中
             imgList.get(MainActivity.home_head_news_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.blue_head_news));
-            imgList.get(MainActivity.home_joke_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_discovery));
-            imgList.get(MainActivity.home_me_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_me));
+//            imgList.get(MainActivity.home_me_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_me));
 
-        } else if (showTag == MainActivity.home_joke_tag) {
-            //发现选中
-            imgList.get(MainActivity.home_head_news_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_head_news));
-            imgList.get(MainActivity.home_joke_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.blue_discovery));
-            imgList.get(MainActivity.home_me_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_me));
+            ImageView mDreamView = imgList.get(MainActivity.home_dream_tag);
+            setIconColor(mDreamView,32,33,34,255);
 
-        } else if (showTag == MainActivity.home_me_tag) {
+            ImageView mConView = imgList.get(MainActivity.home_constellation_tag);
+            setIconColor(mConView,32,33,34,255);
+
+
+
+
+        }else if(showTag == MainActivity.home_me_tag){
             //我的选中
             imgList.get(MainActivity.home_head_news_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_head_news));
-            imgList.get(MainActivity.home_joke_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.gray_discovery));
-            imgList.get(MainActivity.home_me_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.blue_me));
+//            imgList.get(MainActivity.home_me_tag).setImageDrawable(ResourceTools.getDrawable(context, R.mipmap.blue_me));
+
+            ImageView mDreamView = imgList.get(MainActivity.home_dream_tag);
+            setIconColor(mDreamView,32,33,34,255);
+
+            ImageView mConView = imgList.get(MainActivity.home_constellation_tag);
+            setIconColor(mConView,32,33,34,255);
+
         }
 
 
